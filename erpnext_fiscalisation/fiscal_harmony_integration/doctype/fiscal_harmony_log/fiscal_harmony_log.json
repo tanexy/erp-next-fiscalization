@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-10-07 10:18:43.858265",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "timestamp",
+  "status",
+  "signature_valid",
+  "column_break_ywok",
+  "response_status_code",
+  "request_url",
+  "request_id",
+  "request_data_section",
+  "payload",
+  "response",
+  "additional_details_section",
+  "error_details"
+ ],
+ "fields": [
+  {
+   "default": "Now",
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Timestamp",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Success\nFailure\nUnauthorised\nInvalid JSON",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "description": "Indicates whether the received signature was valid. Only applies to POST requests.",
+   "fieldname": "signature_valid",
+   "fieldtype": "Check",
+   "label": "Signature Valid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ywok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "response_status_code",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Response Status Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "request_url",
+   "fieldtype": "Data",
+   "label": "Request URL",
+   "read_only": 1
+  },
+  {
+   "description": "Stores the RequestId field from the Fiscal Harmony payload for traceability.",
+   "fieldname": "request_id",
+   "fieldtype": "Data",
+   "label": "Request ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "request_data_section",
+   "fieldtype": "Section Break",
+   "label": "Request Data"
+  },
+  {
+   "description": "The request payload.",
+   "fieldname": "payload",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Payload",
+   "read_only": 1
+  },
+  {
+   "description": "The response data.",
+   "fieldname": "response",
+   "fieldtype": "Text",
+   "label": "Response",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "additional_details_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Details"
+  },
+  {
+   "description": "Stores additional error details in case of failures.",
+   "fieldname": "error_details",
+   "fieldtype": "Text",
+   "label": "Error Details",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-07 12:30:45.941382",
+ "modified_by": "Administrator",
+ "module": "Fiscal Harmony Integration",
+ "name": "Fiscal Harmony Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "System Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_seen": 1
+}

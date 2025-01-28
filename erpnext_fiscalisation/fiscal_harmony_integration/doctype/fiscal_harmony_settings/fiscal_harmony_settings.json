@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "allow_rename": 1,
+ "creation": "2024-08-16 11:28:25.984071",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_fdhh",
+  "endpoint",
+  "user_profile_id",
+  "column_break_ciyx",
+  "last_successful_request",
+  "disabled",
+  "include_hs_codes",
+  "attach_local_print",
+  "authentication_section",
+  "api_key",
+  "column_break_iofx",
+  "api_secret",
+  "currency_mappings_section",
+  "check_supported_currencies",
+  "validate_currency_mappings",
+  "currency_mappings",
+  "tax_mappings_section",
+  "validate_tax_mappings",
+  "tax_mappings"
+ ],
+ "fields": [
+  {
+   "fieldname": "authentication_section",
+   "fieldtype": "Section Break",
+   "label": "Authentication"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key",
+   "no_copy": 1,
+   "permlevel": 9,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_iofx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret",
+   "no_copy": 1,
+   "permlevel": 9,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_fdhh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "E.g. https://api.fiscalharmony.co.zw/api",
+   "fieldname": "endpoint",
+   "fieldtype": "Data",
+   "label": "Fiscal Harmony Endpoint"
+  },
+  {
+   "fieldname": "column_break_ciyx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_successful_request",
+   "fieldtype": "Datetime",
+   "label": "Last Successful Request",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_mappings",
+   "fieldtype": "Table",
+   "label": "Tax Mappings",
+   "options": "Fiscal Harmony Tax Mapping"
+  },
+  {
+   "fieldname": "currency_mappings_section",
+   "fieldtype": "Section Break",
+   "label": "Currency Mappings"
+  },
+  {
+   "description": "Press this button to list the currencies supported by Fiscal Harmony.",
+   "fieldname": "check_supported_currencies",
+   "fieldtype": "Button",
+   "label": "Check Supported Currencies"
+  },
+  {
+   "description": "A mapping must be made and validated for each currency used in invoices.",
+   "fieldname": "currency_mappings",
+   "fieldtype": "Table",
+   "label": "Currency Mappings",
+   "options": "Fiscal Harmony Currency Mapping"
+  },
+  {
+   "fieldname": "user_profile_id",
+   "fieldtype": "Data",
+   "label": "User Profile ID",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "description": "Validates that all listed currency mappings are registered with Fiscal Harmony.",
+   "fieldname": "validate_currency_mappings",
+   "fieldtype": "Button",
+   "label": "Validate Currency Mappings"
+  },
+  {
+   "fieldname": "tax_mappings_section",
+   "fieldtype": "Section Break",
+   "label": "Tax Mappings"
+  },
+  {
+   "description": "Validates that all listed tax mappings are registered with Fiscal Harmony.",
+   "fieldname": "validate_tax_mappings",
+   "fieldtype": "Button",
+   "label": "Validate Tax Mappings"
+  },
+  {
+   "bold": 1,
+   "default": "1",
+   "description": "Checking this field will block the generation of signatures when submitting invoices.",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disable Fiscalisation"
+  },
+  {
+   "default": "0",
+   "description": "Whether to include HS Codes in invoice uploads.",
+   "fieldname": "include_hs_codes",
+   "fieldtype": "Check",
+   "label": "Include HS Codes"
+  },
+  {
+   "default": "0",
+   "description": "Whether to attach a PDF made from the default print format or the downloaded PDF from Fiscal Harmony.",
+   "fieldname": "attach_local_print",
+   "fieldtype": "Check",
+   "label": "Attach Local Print"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-01-20 11:35:44.345131",
+ "modified_by": "Administrator",
+ "module": "Fiscal Harmony Integration",
+ "name": "Fiscal Harmony Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 9,
+   "read": 1,
+   "role": "System Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

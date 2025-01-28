@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "creation": "2024-08-23 15:32:17.114242",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "sales_invoice",
+  "is_retry",
+  "column_break_wnck",
+  "fdms_url",
+  "fiscal_harmony_id",
+  "verification_details_section",
+  "error",
+  "verification_code",
+  "fiscal_day",
+  "device_id",
+  "invoice_number",
+  "fiscal_harmony_filename",
+  "column_break_rvhj",
+  "bypass_tin"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details "
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_retry",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Is Retry?",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wnck",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "fdms_url",
+   "fieldtype": "Data",
+   "label": "FDMS URL",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "fiscal_harmony_id",
+   "fieldtype": "Data",
+   "label": "Fiscal Harmony ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "verification_details_section",
+   "fieldtype": "Section Break",
+   "label": "Verification Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "verification_code",
+   "fieldtype": "Data",
+   "label": "Verification Code",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval: doc.fiscal_day",
+   "fieldname": "fiscal_day",
+   "fieldtype": "Int",
+   "label": "Fiscal Day",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval: doc.device_id",
+   "fieldname": "device_id",
+   "fieldtype": "Int",
+   "label": "Device ID",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval: doc.invoice_number",
+   "fieldname": "invoice_number",
+   "fieldtype": "Int",
+   "label": "FDMS Invoice Number",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "error",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Error Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fiscal_harmony_filename",
+   "fieldtype": "Data",
+   "label": "Fiscal Harmony Filename",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_rvhj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: (doc.error && doc.error.toUpperCase() === \"NO TIN PROVIDED\") || doc.bypass_tin",
+   "description": "Whether to ignore a missing TIN for this transaction. The system will add \"Cash \" to the start of the customer name when fiscalising to treat this sale as a cash sale.",
+   "fieldname": "bypass_tin",
+   "fieldtype": "Check",
+   "label": "Bypass TIN",
+   "read_only_depends_on": "eval: !(doc.error && doc.error.toUpperCase() === \"NO TIN PROVIDED\" && doc.is_retry)"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-20 15:48:14.878850",
+ "modified_by": "Administrator",
+ "module": "Fiscal Harmony Integration",
+ "name": "Fiscal Signature",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "sales_invoice",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "sales_invoice"
+}

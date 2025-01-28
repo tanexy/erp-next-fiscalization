@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-19 15:42:04.077536",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tax_id",
+  "column_break_xgdq",
+  "is_default",
+  "section_break_rkka",
+  "tax_field_type",
+  "tax_code",
+  "column_break_mrcl",
+  "destination_tax_id"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "ID",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_xgdq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Whether this Tax Mapping should be used as the default tax mapping in case an item does not match any of the given mappings.",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Is Default"
+  },
+  {
+   "fieldname": "section_break_rkka",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tax_field_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tax Field Type",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Sales Taxes and Charges Template\",\"Item Tax Template\"]]]",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mrcl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "description": "The ERPNext tax reference, it can either be an Item Tax Template for item specific taxes, or a Sales Taxes and Charges Template for whole invoices.",
+   "fieldname": "tax_code",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Tax Code",
+   "options": "tax_field_type",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "description": "The tax ID from Fiscal Harmony. Check the device config to view the available options.",
+   "fieldname": "destination_tax_id",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Fiscal Harmony Tax ID",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-21 14:53:30.849130",
+ "modified_by": "Administrator",
+ "module": "Fiscal Harmony Integration",
+ "name": "Fiscal Harmony Tax Mapping",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-19 16:07:11.733589",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "currency_id",
+  "section_break_pszb",
+  "system_currency",
+  "column_break_qeoz",
+  "fiscal_harmony_currency"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "currency_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "ID",
+   "no_copy": 1,
+   "non_negative": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_pszb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "system_currency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "System Currency",
+   "options": "Currency",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_qeoz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Use the \"Check Supported Currencies\" button to check for options.",
+   "fieldname": "fiscal_harmony_currency",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Fiscal Harmony Currency",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-21 13:44:36.081794",
+ "modified_by": "Administrator",
+ "module": "Fiscal Harmony Integration",
+ "name": "Fiscal Harmony Currency Mapping",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,22 @@
+[project]
+authors = [
+  {name = "Eskill Trading (Pvt) Ltd", email = "andrew@eskilltrading.com"},
+]
+dependencies = [
+  "jsonschema",
+  "requests",
+  "qrcode",
+]
+description = "This app implements the Fiscal Harmony API for integration with ERPNext for the fiscalisation of invoices and credit notes."
+dynamic = ["version"]
+name = "erpnext_fiscalisation"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.4,<4"]
+
+# These dependencies are only installed when developer mode is enabled
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"
