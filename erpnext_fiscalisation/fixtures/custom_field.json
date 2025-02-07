@@ -197,7 +197,7 @@
   "in_list_view": 0,
   "in_preview": 1,
   "in_standard_filter": 0,
-  "insert_after": "bp_number",
+  "insert_after": "tax_id",
   "is_system_generated": 0,
   "is_virtual": 0,
   "label": "TIN Number",

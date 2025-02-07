@@ -23,19 +23,26 @@ frappe.listview_settings["Fiscal Signature"] = {
     sales_invoice: 1,
   },
   get_indicator: (doc) => {
-    let doc_status, colour;
+    let doc_status, colour, filter;
     if (doc.is_retry) {
       doc_status = "Needs Retry";
       colour = "red";
+      filter = "is_retry,=,1";
     } else if (doc.fdms_url) {
       doc_status = "Fiscalised";
       colour = "green";
-    } else {
+      filter = "fdms_url,is,set";
+    } else if (doc.error) {
       doc_status = `${doc.error}`;
       colour = "gray";
+      filter = "error,is,set";
+    } else {
+      doc_status = "Pending FH Response";
+      colour = "orange";
+      filter = "fdms_url,is,not set";
     }
 
-    return [doc_status, colour, `is_retry,=,${doc.is_retry}`];
+    return [doc_status, colour, filter];
   },
   hide_name_column: true,
   refresh: () => {},

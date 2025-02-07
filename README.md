@@ -4,4 +4,4 @@ This app implements the Fiscal Harmony API for integration with ERPNext for the 
 
 #### License
 
-gpl-3.0# erp-next-fiscalization
+gpl-3.0

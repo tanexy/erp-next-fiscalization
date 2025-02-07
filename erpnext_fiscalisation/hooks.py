@@ -25,6 +25,7 @@ override_doctype_class = {
 
 # Include js in doctype views.
 doctype_js = {
+    "Customer": "public/js/doctype/customer.js",
     "Item Group": "public/js/doctype/item_group.js",
 }
 

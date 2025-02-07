@@ -235,9 +235,6 @@ class FiscalHarmonySettings(Document):
         Args:
             signature (FiscalSignature): The document that stores the fiscal result."""
 
-        if signature.is_retry:
-            signature.is_retry = False
-
         data = signature.get_payload_data()
         payload = self.__encode_data(data)
         headers = self.__get_signed_headers(payload)
@@ -248,6 +245,8 @@ class FiscalHarmonySettings(Document):
             "request_url": url,
             "payload": json.dumps(data, indent=2),
         }
+        if signature.is_retry:
+            signature.is_retry = False
 
         try:
             response = requests.post(
